@@ -210,6 +210,14 @@ function Cool.Tracking.EnableSynergiesFromPrefs()
     end
 end
 
+function Cool.Tracking.EnableBuffsFromPrefs()
+    for key, enable in pairs(Cool.character.buffs) do
+        if enable == true then
+            Cool.Tracking.EnableTrackingForSet(key, true)
+        end
+    end
+end
+
 function Cool.Tracking.EnablePassivesFromPrefs()
     for key, enable in pairs(Cool.character.passive) do
         if enable == true then

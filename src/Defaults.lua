@@ -30,6 +30,7 @@ local defaults = {
 }
 
 local sets = {}
+local buffs = {}
 local monsters = {}
 local synergies = {}
 local passives = {}
@@ -55,6 +56,9 @@ function Cool.Defaults:Generate()
         elseif set.procType == "cp" then
             -- Populate CP
             cp[key] = false
+        elseif set.procType == "buffs" then
+            -- Populate CP
+            buffs[key] = false
         elseif set.procType == "passive" then
             -- Populate Passives
             passives[key] = false
@@ -86,6 +90,7 @@ end
 function Cool.Defaults.GetCharacter()
     return {
 		["set"] = sets,
+        ["buffs"] = buffs,
         ["arena"] = arenas,
         ["monster"] = monsters,
 		["synergy"] = synergies,

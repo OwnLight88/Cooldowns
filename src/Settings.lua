@@ -125,10 +125,11 @@ local default = {
     cp = "-- Select a CP Passive --",
     monster = "-- Select a Monster Set --",
     arena = "-- Select a Arena Set --",
-}
+    buffs = "-- Select a Buff to Track"
 
 local selected = {
     set = default.set,
+    buffs = default.buffs,
     synergy = default.synergy,
     passive = default.passive,
     cp = default.cp,
@@ -322,6 +323,11 @@ function Cool.Settings.Init()
             data = {default.enchant},
             description = {"Select a enchant to customize."},
         },
+        buffs = {
+            name = "|cE100FFBuffs|r",
+            data = {default.buffs},
+            description = {"Select a buffs to customize."},
+        },
     }
 
     for key, set in pairs(Cool.Data.Sets) do
@@ -340,6 +346,9 @@ function Cool.Settings.Init()
         elseif set.procType == "cp" then
             table.insert(settingsBreakout.cp.data, key)
             table.insert(settingsBreakout.cp.description, set.description)
+        elseif set.procType == "buffs" then
+            table.insert(settingsBreakout.buffs.data, key)
+            table.insert(settingsBreakout.buffs.description, set.description)
         elseif set.procType == "enchant" then
             table.insert(settingsBreakout.enchant.data, key)
             table.insert(settingsBreakout.enchant.description, set.description)
@@ -570,7 +579,9 @@ function Cool.Settings.Upgrade()
                     Cool.character.enchant[key] = Cool.character[key]
                 elseif set.procType == "cp" then
                     Cool.character.cp[key] = Cool.character[key]
-                elseif set.procType == "monster" then
+                elseif set.procType == "buffs" then
+                    Cool.character.buffs[key] = Cool.character[key]
+                elseif set.procType == "buffs" then
                     Cool.character.monster[key] = Cool.character[key]
                 elseif set.procType == "arena" then
                     Cool.character.arena[key] = Cool.character[key]
