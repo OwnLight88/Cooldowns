@@ -1,0 +1,22 @@
+## Title: Cooldowns
+## APIVersion: 100034
+## SavedVariables: CooldownsVariables
+## Description: Displays cooldowns for various procs from set bonuses, enchants, synergies, class and passives cp.
+## Version: 1.7.1
+## AddOnVersion: 171
+## Author:  g4rr3t
+## DependsOn: LibAddonMenu-2.0>=28
+
+lib/LibEquipmentBonus/LibEquipmentBonus.lua
+
+src/Main.lua
+src/Data.lua
+src/Defaults.lua
+src/Interface.lua
+src/Sounds.lua
+src/Settings.lua
+src/Tracking.lua
+
+; PackageExcludes: art/*
+; PackageReleaseDir: release
+; PackageBumpFiles: src/Main.lua
