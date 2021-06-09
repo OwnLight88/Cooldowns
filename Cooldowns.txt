@@ -1,5 +1,5 @@
 ## Title: Cooldowns
-## APIVersion: 100034
+## APIVersion: 100035
 ## SavedVariables: CooldownsVariables
 ## Description: Displays cooldowns for various procs from set bonuses, enchants, synergies, class and passives cp.
 ## Version: 1.7.1
